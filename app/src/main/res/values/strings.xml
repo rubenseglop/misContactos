@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MisContactos</string>
+    <string name="action_anadir">Añadir</string>
+    <string name="action_eliminar">Eliminar</string>
+    <string name="action_exportar">Exportar</string>
+    <string name="nombre">nombre</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="apellidos">apellidos</string>
+    <string name="direccion">direccion</string>
+    <string name="telefono">telefono</string>
+    <string name="correo">correo</string>
+</resources>
