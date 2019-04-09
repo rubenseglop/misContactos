@@ -7,8 +7,8 @@ import android.widget.Button;
 
 public class anadir extends AppCompatActivity {
 
-    private Button aceptar = (Button) findViewById(R.id.aceptar);
-    private Button cancelar = (Button) findViewById(R.id.cancelar);
+   // private Button aceptar = (Button) findViewById(R.id.aceptar);
+   // private Button cancelar = (Button) findViewById(R.id.cancelar);
 
 
     @Override
@@ -17,7 +17,7 @@ public class anadir extends AppCompatActivity {
         setContentView(R.layout.activity_anadir);
     }
     public void metodocancelar(View v){
-        finish();
+        onBackPressed();
     }
 
 }

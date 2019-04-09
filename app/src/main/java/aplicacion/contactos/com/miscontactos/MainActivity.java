@@ -1,8 +1,12 @@
 package aplicacion.contactos.com.miscontactos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -12,6 +16,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    private static final long SPLASH_RETARDO = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,20 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        //SPLASH IMAGEN
+        //getActionBar().hide(); //para ocultar la barra
+
+        if (savedInstanceState == null) {
+            // Show the splash screen at the beginning
+            Fragment splash = new Fragment();
+            android.support.v4.app.FragmentTransaction transaction;
+            transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.main, splash);
+            transaction.addToBackStack(null);
+            transaction.commit();
+        }
+
 
         BaseDatos mibasedatos = new BaseDatos(this);
         Log.d("myTag", mibasedatos.getDatabaseName());
@@ -52,7 +71,9 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_anadir) {
             //Toast.makeText(this, "Has pulsado añadir", Toast.LENGTH_SHORT).show();
-            setContentView(R.layout.activity_anadir);
+            //setContentView(R.layout.activity_anadir);
+            Intent i = new Intent(MainActivity.this, anadir.class);
+            startActivity(i);
 
             return true;
         }
