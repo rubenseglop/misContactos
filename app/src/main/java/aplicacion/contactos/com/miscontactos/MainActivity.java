@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -48,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        BaseDatos mibasedatos = new BaseDatos(this);
+        BaseDatosInterna mibasedatos = new BaseDatosInterna(this);
         Log.d("myTag", mibasedatos.getDatabaseName());
         System.out.println(mibasedatos.getDatabaseName());
     }
